@@ -350,7 +350,7 @@ def interpolate_trilinear(
         bottom_left_u = gather(ceils[0], floors[1], ceils[2], "bottom_left_u")
         bottom_right_u = gather(ceils[0], ceils[1], ceils[2], "bottom_right_u")
 
-        # now, do the actual interpolation
+        # now, do the actual interpolation FIXME NOT RIGHT YET
         with tf.name_scope("interpolate"):
             interp_top_d = alphas[1] * (top_right_d - top_left_d) + top_left_d
             interp_bottom_d = alphas[1] * (bottom_right_d - bottom_left_d) + bottom_left_d
